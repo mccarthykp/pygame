@@ -1,6 +1,7 @@
 import pygame
 from random import randint, choice
 from drawing_objects import GameObject
+from player import Player
 
 class Apple(GameObject):
   def __init__(self):
@@ -47,6 +48,7 @@ screen = pygame.display.set_mode([500, 500])
 clock = pygame.time.Clock()
 apple = Apple()
 strawberry = Strawberry()
+player = Player()
 
 running = True
 while running:
@@ -61,18 +63,22 @@ while running:
       if event.key == pygame.K_ESCAPE:
         running = False
       elif event.key == pygame.K_LEFT:
-        print('LEFT')
+        player.left()
       elif event.key == pygame.K_RIGHT:
-        print('RIGHT')
+        player.right()
       elif event.key == pygame.K_UP:
-        print('UP')
+        player.up()
       elif event.key == pygame.K_DOWN:
-        print('DOWN')
+        player.down()
   
   strawberry.move()
   strawberry.render(screen)
 
   apple.move()
   apple.render(screen)
+
+  player.move()
+  player.render(screen)
+
   pygame.display.flip()
   clock.tick(90)
