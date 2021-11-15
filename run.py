@@ -36,9 +36,6 @@ while running:
   all_sprites.add(apple)
   all_sprites.add(strawberry)
 
-  strawberry.move()
-  strawberry.render(screen)
-
   for entity in all_sprites:
     entity.move()
     entity.render(screen)
