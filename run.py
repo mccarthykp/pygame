@@ -1,46 +1,6 @@
 import pygame
-from random import randint, choice
-from drawing_objects import GameObject
+from fruits import Apple, Strawberry
 from player import Player
-
-class Apple(GameObject):
-  def __init__(self):
-    super(Apple, self).__init__(0, 0, 'apple.png')
-    self.dx = 0
-    self.dy = (randint(0, 200) / 100) + 1
-    self.reset()
-
-  def move(self):
-    self.x += self.dx
-    self.y += self.dy
-
-    if self.y > 500:
-      self.reset()
-  
-  def reset(self):
-    x_coordinates = [93, 218, 343]
-    self.x = choice(x_coordinates)
-    self.y = -64
-  
-class Strawberry(GameObject):
-  def __init__(self):
-    super(Strawberry, self).__init__(0, 0, 'strawberry.png')
-    self.dx = (randint(0, 200) / 100) + 1
-    self.dy = 0
-    self.reset()
-
-  def move(self):
-    self.x += self.dx
-    self.y += self.dy
-
-    if self.x > 500:
-      self.reset()
-  
-  def reset(self):
-    y_coordinates = [93, 218, 343]
-    self.x = -64
-    self.y = choice(y_coordinates)
-
 
 pygame.init()
 screen = pygame.display.set_mode([500, 500])

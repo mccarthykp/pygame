@@ -1,11 +1,12 @@
-from drawing_objects import GameObject
+from game_object import GameObject
 
+# Player subclass of GameObject
 class Player(GameObject):
   def __init__(self):
-    super(Player, self).__init__(0, 0, 'player.png')
+    super(Player, self).__init__(0, 0, 'src/images/player.png')
     self.dx = 95
     self.dy = 95
-    # self.reset()
+    self.reset()
 
   def left(self):
     if self.dx <= 95:
