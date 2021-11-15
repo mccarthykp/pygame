@@ -31,14 +31,17 @@ while running:
       elif event.key == pygame.K_DOWN:
         player.down()
   
+  all_sprites = pygame.sprite.Group()
+  all_sprites.add(player)
+  all_sprites.add(apple)
+  all_sprites.add(strawberry)
+
   strawberry.move()
   strawberry.render(screen)
 
-  apple.move()
-  apple.render(screen)
-
-  player.move()
-  player.render(screen)
+  for entity in all_sprites:
+    entity.move()
+    entity.render(screen)
 
   pygame.display.flip()
   clock.tick(90)
