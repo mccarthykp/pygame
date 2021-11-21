@@ -17,30 +17,28 @@ class Bomb(GameObject):
       self.reset()
 
   # reset should randomly choose whether the bomb will move up, down, left or right
-  # def reset(self):
-  #   x_coordinates = [93, 218, 343]
-  #   y_coordinates = [-64, 564]
-  #   self.x = choice(x_coordinates)
-  #   self.y = choice(y_coordinates)
-
   def reset(self):
     direction = randint(1, 4)
     coordinates = [93, 218, 343]
-    if direction == 1: # left
+    # direction = left
+    if direction == 1:
       self.x = 564
       self.y = choice(coordinates)
       self.dx = ((randint(25, 200) / 100) + 1) * - 1
       self.dy = 0
-    elif direction == 2: # right
+    # direction = right
+    elif direction == 2:
       self.x = -64
       self.y = choice(coordinates)
       self.dx = (randint(25, 200) / 100) + 1
       self.dy = 0
-    elif direction == 3: # down
+    # direction = down
+    elif direction == 3:
       self.x = choice(coordinates)
       self.y = -64
       self.dx = 0
       self.dy = (randint(25, 200) / 100) + 1
+    # direction = up
     else:
       self.x = choice(coordinates)
       self.y = 564
