@@ -1,6 +1,7 @@
 import pygame
 from fruits import Apple, Strawberry
 from player import Player
+from bomb import Bomb
 
 pygame.init()
 screen = pygame.display.set_mode([500, 500])
@@ -9,6 +10,7 @@ clock = pygame.time.Clock()
 apple = Apple()
 strawberry = Strawberry()
 player = Player()
+bomb = Bomb()
 
 running = True
 while running:
@@ -35,6 +37,7 @@ while running:
   all_sprites.add(player)
   all_sprites.add(apple)
   all_sprites.add(strawberry)
+  all_sprites.add(bomb)
 
   for entity in all_sprites:
     entity.move()
