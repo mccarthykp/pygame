@@ -8,13 +8,15 @@ pygame.init()
 screen = pygame.display.set_mode([500, 500])
 myfont = pygame.font.SysFont('Comic Sans', 30)
 
-level_one = pygame.image.load('background/level_one.gif')
-level_two = pygame.image.load('background/level_two.gif')
+# TODO: Add function to change background on count collected
+# TODO: Pygame doesn't support .gif - write a function to update each frame of .gif?
+# level_one = pygame.image.load('background/level_one.gif')
+# level_two = pygame.image.load('background/level_two.gif')
 level_three = pygame.image.load('background/level_three.gif')
-level_four = pygame.image.load('background/level_four.gif')
-level_five = pygame.image.load('background/level_five.gif')
-level_six = pygame.image.load('background/level_six.gif')
-level_seven = pygame.image.load('background/level_seven.gif')
+# level_four = pygame.image.load('background/level_four.gif')
+# level_five = pygame.image.load('background/level_five.gif')
+# level_six = pygame.image.load('background/level_six.gif')
+# level_seven = pygame.image.load('background/level_seven.gif')
 
 clock = pygame.time.Clock()
 apple = Apple()
