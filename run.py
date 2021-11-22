@@ -8,7 +8,6 @@ pygame.init()
 screen = pygame.display.set_mode([500, 500])
 myfont = pygame.font.SysFont('Comic Sans', 30)
 
-
 level_one = pygame.image.load('background/level_one.gif')
 level_two = pygame.image.load('background/level_two.gif')
 level_three = pygame.image.load('background/level_three.gif')
@@ -28,7 +27,7 @@ collected = 0
 running = True
 while running:
   screen.fill((0, 0, 0))
-  screen.blit(level_seven, [0, 0])
+  screen.blit(level_three, [0, 0])
   # Looks at events
   for event in pygame.event.get():
     if event.type == pygame.QUIT:
@@ -58,7 +57,6 @@ while running:
 
   if collected == 2:
     all_sprites.add(bomb2)
-    
     
   for entity in all_sprites:
     entity.move()
